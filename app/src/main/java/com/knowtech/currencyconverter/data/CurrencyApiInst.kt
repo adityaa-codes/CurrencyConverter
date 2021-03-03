@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class CurrencyApiInst {
     companion object {
-        private const val BASE_URL = " https://api.exchangeratesapi.io"
+        private const val BASE_URL = "https://api.exchangeratesapi.io"
         private val retrofit by lazy {
             val logging = HttpLoggingInterceptor()
             logging.setLevel(HttpLoggingInterceptor.Level.BODY)
