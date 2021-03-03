@@ -4,13 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.knowtech.currencyconverter.data.models.ExchangeRateResponse
 import com.knowtech.currencyconverter.data.repositories.CurrencyRepository
-import com.knowtech.currencyconverter.data.repositories.CurrencyRepositoryImpl
-import com.knowtech.currencyconverter.utils.NetworkManager
 import com.knowtech.currencyconverter.utils.Resource
 import kotlinx.coroutines.launch
-import retrofit2.Response
 import kotlin.math.round
 
 class CurrencyViewModel(

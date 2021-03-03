@@ -3,7 +3,6 @@ package com.knowtech.currencyconverter.utils
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.knowtech.currencyconverter.data.repositories.CurrencyRepository
-import com.knowtech.currencyconverter.data.repositories.CurrencyRepositoryImpl
 import com.knowtech.currencyconverter.ui.CurrencyViewModel
 
 @Suppress("UNCHECKED_CAST")
