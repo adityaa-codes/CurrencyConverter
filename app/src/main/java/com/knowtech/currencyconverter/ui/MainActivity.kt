@@ -2,6 +2,7 @@ package com.knowtech.currencyconverter.ui
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -43,7 +44,8 @@ class MainActivity : AppCompatActivity(), KodeinAware {
                     }
                     is CurrencyViewModel.CurrencyEvent.Error -> {
                         hideProgressBar()
-                        binding.tvResult.text = response.error
+                        binding.tvResult.text = null
+                        Toast.makeText(this@MainActivity, response.error, Toast.LENGTH_SHORT).show()
 
                     }
                     is CurrencyViewModel.CurrencyEvent.Loading -> {

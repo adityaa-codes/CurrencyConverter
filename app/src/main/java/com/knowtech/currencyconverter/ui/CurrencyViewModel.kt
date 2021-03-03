@@ -24,33 +24,8 @@ class CurrencyViewModel(
         object Empty : CurrencyEvent()
     }
 
-    val rates: MutableLiveData<Resource<ExchangeRateResponse>> = MutableLiveData()
     private val _conversion = MutableLiveData<CurrencyEvent>(CurrencyEvent.Empty)
     val conversion: LiveData<CurrencyEvent> = _conversion
-    private lateinit var response: Response<ExchangeRateResponse>
-
-    /*private suspend fun getRates(base: String, symbols: String) {
-        try {
-            if (networkManager.isOnline()) {
-                response = repositoryImpl.getRates(base, symbols)
-                rates.postValue(handleRatesResponse(response))
-            } else {
-                rates.postValue(Resource.Error("No Internet Connection"))
-            }
-        } catch (e: Exception) {
-            rates.postValue(Resource.Error(e.message ?: "An Error Occurred"))
-        }
-    }*/
-/*
-    private fun handleRatesResponse(response: Response<ExchangeRateResponse>): Resource<ExchangeRateResponse> {
-        if (response.isSuccessful) {
-            response.body()?.let { resultResponse ->
-                return Resource.Success(resultResponse)
-            }
-        }
-        return Resource.Error(response.message())
-
-    }*/
 
     fun convertAmount(
         toCurrency: String,
@@ -67,8 +42,7 @@ class CurrencyViewModel(
         viewModelScope.launch {
             _conversion.value = CurrencyEvent.Loading
 
-            val rateResponse = repository.getRates(fromCurrency, toCurrency)
-            when (rateResponse) {
+            when (val rateResponse = repository.getRates(fromCurrency, toCurrency)) {
                 is Resource.Error -> _conversion.value = CurrencyEvent.Error(rateResponse.message!!)
                 is Resource.Success -> {
                     val rates = rateResponse.data!!.rates
