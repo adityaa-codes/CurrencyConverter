@@ -1,4 +1,4 @@
-package com.knowtech.currencyconverter.utils
+package com.knowtech.currencyconverter.core
 
 import android.content.Context
 import android.net.ConnectivityManager

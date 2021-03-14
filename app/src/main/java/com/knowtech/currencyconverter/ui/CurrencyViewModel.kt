@@ -5,7 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.knowtech.currencyconverter.data.repositories.CurrencyRepository
-import com.knowtech.currencyconverter.utils.Resource
+import com.knowtech.currencyconverter.core.Resource
+import com.knowtech.currencyconverter.ui.state.CurrencyEvent
 import kotlinx.coroutines.launch
 import kotlin.math.round
 
@@ -13,14 +14,8 @@ class CurrencyViewModel(
     private val repository: CurrencyRepository
 ) : ViewModel() {
 
-    sealed class CurrencyEvent {
-        class Success(val result: String) : CurrencyEvent()
-        class Error(val error: String) : CurrencyEvent()
-        object Loading : CurrencyEvent()
-        object Empty : CurrencyEvent()
-    }
 
-    private val _conversion = MutableLiveData<CurrencyEvent>(CurrencyEvent.Empty)
+    private val _conversion = MutableLiveData<CurrencyEvent>()
     val conversion: LiveData<CurrencyEvent> = _conversion
 
     fun convertAmount(

@@ -1,4 +1,4 @@
-package com.knowtech.currencyconverter.utils
+package com.knowtech.currencyconverter.core
 
 sealed class Resource<T>(val data: T? = null, val message: String? = null) {
     class Success<T>(data: T) : Resource<T>(data)

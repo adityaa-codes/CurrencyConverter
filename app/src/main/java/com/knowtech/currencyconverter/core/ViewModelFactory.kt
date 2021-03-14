@@ -1,4 +1,4 @@
-package com.knowtech.currencyconverter.utils
+package com.knowtech.currencyconverter.core
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
