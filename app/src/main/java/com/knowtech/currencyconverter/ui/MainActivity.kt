@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity(), KodeinAware {
                     is CurrencyEvent.Error -> {
                         showProgressBar(loading = false)
                         binding.tvResult.text = null
+
                         Toast.makeText(this@MainActivity, response.error, Toast.LENGTH_SHORT).show()
 
                     }
