@@ -25,14 +25,14 @@ This App Uses MVVM(Model ViewViewModel) Architeture
     ├── core                # Core Layer
     │   ├── network      
     │   └── factory         # ViewModel Factory
-     |
+    |
     ├── di                  # Dependency Injection             
-     |
+    |
     ├── ui                  # View layer
     │   ├── state           # UI States
     │   ├── viewmodel       # ViewModel
     │   └── activity        # Activity    
-     |
+    |
     └── data               # Data Layer
         ├── models         # ViewModels
         ├── repositories   # Repository
