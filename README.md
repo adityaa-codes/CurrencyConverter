@@ -1,3 +1,4 @@
+
 # CurrencyConverter
 A  Currency Converter  Application for implementing  below items in Android.
 * 100% [Kotlin](https://kotlinlang.org/)
@@ -12,7 +13,7 @@ A  Currency Converter  Application for implementing  below items in Android.
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
-#Architecture
+# Architecture
 This App Uses MVVM(Model ViewViewModel) Architeture
    
 ![](images/mvvm-architecture.png)
@@ -20,32 +21,32 @@ This App Uses MVVM(Model ViewViewModel) Architeture
 # Application Structure
 
    com.knowtech.currencyconverter    # Root Package
-    .
+   
     ├── core                # Core Layer
     │   ├── network      
     │   └── factory         # ViewModel Factory
-    |
+     |
     ├── di                  # Dependency Injection             
-    |
+     |
     ├── ui                  # View layer
     │   ├── state           # UI States
     │   ├── viewmodel       # ViewModel
     │   └── activity        # Activity    
-    |
+     |
     └── data               # Data Layer
         ├── models         # ViewModels
         ├── repositories   # Repository
         └── retrofit       # Network Operations
             
 ## 📸 Screenshots  
-||||
-|:----------------------------------------:|:-----------------------------------------:|
-| ![](images/Screenshot.jpg) | ![](images/Screenshot2.jpg) | 
-
+|||
+|:--------:| -------------:|
+| | |
+| ![](images/Screenshot.jpg) | ![](images/Screenshot2.jpg)|
 
 
 # License
-    ```xml
+```xml
     Copyright 2021 Aditya Gupta (mailadityaguptaa@gmail.com)
     
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -59,7 +60,4 @@ This App Uses MVVM(Model ViewViewModel) Architeture
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
     limitations under the License.
-    ```
-    
-    
-    
+```
